@@ -7,11 +7,29 @@
 </head>
 <body>
     <h1>Liste des utilisateurs</h1>
-    <ul>
-        {% for user in users %}
-        <li>{{ user.first_name }} {{ user.last_name }} - {{ user.email }} - {{ user.phone }}</li>
-        {% endfor %}
-    </ul>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>Prénom</th>
+                <th>Nom</th>
+                <th>Email</th>
+                <th>Téléphone</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for user in users %}
+            <tr>
+                <td>{{ user.first_name }}</td>
+                <td>{{ user.last_name }}</td>
+                <td>{{ user.email }}</td>
+                <td>{{ user.phone }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    <br>
     <a href="/add">Ajouter un nouvel utilisateur</a>
 </body>
 </html>
